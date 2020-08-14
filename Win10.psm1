@@ -6,6 +6,198 @@
 ##########
 
 ##########
+# My Tweaks
+##########
+
+Function InstallChocolatey {
+	Write-Output "Installing Chocolatey"
+	Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+	choco install chocolatey-core.extension -y
+}
+
+Function OOShutup10 {
+	Write-Output "Running O&O Shutup with Recommended Settings"
+	Import-Module BitsTransfer
+	Start-BitsTransfer -Source "https://raw.githubusercontent.com/tom0034/Win10-Initial-Setup-Script/blob/master/ooshutup10.cfg" -Destination ooshutup10.cfg
+	Start-BitsTransfer -Source "https://dl5.oo-software.com/files/ooshutup10/OOSU10.exe" -Destination OOSU10.exe
+	./OOSU10.exe ooshutup10.cfg /quiet
+}
+
+Function InstallAdobe {
+	Write-Output "Installing Adobe Acrobat Reader"
+	choco install adobereader -y
+}
+
+Function InstallJava {
+	Write-Output "Installing Java"
+	choco install jre8 -y
+}
+
+Function Install7Zip {
+	Write-Output "Installing 7-Zip"
+	choco install 7zip.install -y
+}
+
+Function InstallWinRAR {
+	Write-Output "Installing WinRAR"
+	choco install winrar -y
+}
+
+Function InstallNotepadplusplus {
+	Write-Output "Installing Notepad++"
+	choco install notepadplusplus -y
+}
+
+Function InstallGoogleChrome {
+	Write-Output "Installing Google Chrome"
+	choco install googlechrome -y
+}
+
+Function InstallFirefox {
+	Write-Output "Installing Firefox"
+	choco install firefox -y
+}
+
+Function InstallDotNet35 {
+	Write-Output "Installing Microsoft .NET Framework 3.5"
+	choco install dotnet3.5 -y
+}
+
+Function InstallDotNet4 {
+	Write-Output "Installing Microsoft .NET Framework 4"
+	choco install dotnet4.7.1 -y
+}
+
+Function InstallDotNet48 {
+	Write-Output "Installing Microsoft .NET Framework 4.8"
+	choco install dotnetfx -y
+}
+
+Function InstallVC2005 {
+	Write-Output "Installing Microsoft Visual C++ 2005"
+	choco install vcredist2005 -y
+}
+
+Function InstallVC2008 {
+	Write-Output "Installing Microsoft Visual C++ 2008"
+	choco install vcredist2008 -y
+}
+
+Function InstallVC2010 {
+	Write-Output "Installing Microsoft Visual C++ 2010"
+	choco install vcredist2010 -y
+}
+
+Function InstallVC2012 {
+	Write-Output "Installing Microsoft Visual C++ 2012"
+	choco install vcredist2012 -y
+}
+
+Function InstallVC2013 {
+	Write-Output "Installing Microsoft Visual C++ 2013"
+	choco install vcredist2013 -y
+}
+
+Function InstallVC2015 {
+	Write-Output "Installing Microsoft Visual C++ 2015"
+	choco install vcredist2015 -y
+}
+
+Function InstallVC2017 {
+	Write-Output "Installing Microsoft Visual C++ 2017"
+	choco install vcredist2017 -y
+}
+
+Function InstallIrfanView {
+	Write-Output "Installing IrfanView Image Viewer"
+	choco install irfanview -y
+}
+
+Function InstallVLC {
+	Write-Output "Installing VLC Media Player"
+	choco install vlc -y
+}
+
+Function InstallQBtorrent {
+	Write-Output "Installing qBitorrent"
+	choco install qbittorrent -y
+}
+
+Function InstallOffice2019 {
+	Write-Output "Installing Microsoft Office 2019 ProPlus 2019"
+	choco install office2019proplus -y
+}
+
+##########
+# Remove Windows Apps
+##########
+
+Function DebloatAll {
+
+    $Bloatware = @(
+
+        #Unnecessary Windows 10 AppX Apps
+        "Microsoft.BingNews"
+        "Microsoft.GetHelp"
+        "Microsoft.Getstarted"
+        "Microsoft.Messaging"
+        "Microsoft.Microsoft3DViewer"
+        "Microsoft.MicrosoftSolitaireCollection"
+        "Microsoft.NetworkSpeedTest"
+        "Microsoft.News"
+        "Microsoft.Office.Lens"
+        "Microsoft.Office.Sway"
+        "Microsoft.OneConnect"
+        "Microsoft.People"
+        "Microsoft.Print3D"
+        "Microsoft.SkypeApp"
+        "Microsoft.StorePurchaseApp"
+        "Microsoft.Whiteboard"
+        "Microsoft.WindowsAlarms"
+        "microsoft.windowscommunicationsapps"
+        "Microsoft.WindowsFeedbackHub"
+        "Microsoft.WindowsMaps"
+        "Microsoft.WindowsSoundRecorder"
+        "Microsoft.ZuneMusic"
+        "Microsoft.ZuneVideo"
+
+        #Sponsored Windows 10 AppX Apps
+        #Add sponsored/featured apps to remove in the "*AppName*" format
+        "*EclipseManager*"
+        "*ActiproSoftwareLLC*"
+        "*AdobeSystemsIncorporated.AdobePhotoshopExpress*"
+        "*Duolingo-LearnLanguagesforFree*"
+        "*PandoraMediaInc*"
+        "*CandyCrush*"
+        "*BubbleWitch3Saga*"
+        "*Wunderlist*"
+        "*Flipboard*"
+        "*Twitter*"
+        "*Facebook*"
+        "*Spotify*"
+        "*Royal Revolt*"
+        "*Sway*"
+        "*Speed Test*"
+        "*Dolby*"
+             
+        #Optional: Typically not removed but you can if you need to for some reason
+        #"*Microsoft.Advertising.Xaml_10.1712.5.0_x64__8wekyb3d8bbwe*"
+        #"*Microsoft.Advertising.Xaml_10.1712.5.0_x86__8wekyb3d8bbwe*"
+        #"*Microsoft.BingWeather*"
+        #"*Microsoft.MSPaint*"
+        #"*Microsoft.MicrosoftStickyNotes*"
+        #"*Microsoft.Windows.Photos*"
+        #"*Microsoft.WindowsCalculator*"
+        #"*Microsoft.WindowsStore*"
+    )
+    foreach ($Bloat in $Bloatware) {
+        Get-AppxPackage -Name $Bloat| Remove-AppxPackage
+        Get-AppxProvisionedPackage -Online | Where-Object DisplayName -like $Bloat | Remove-AppxProvisionedPackage -Online
+        Write-Output "Trying to remove $Bloat."
+    }
+}
+
+##########
 #region Privacy Tweaks
 ##########
 
