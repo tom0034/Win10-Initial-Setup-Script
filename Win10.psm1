@@ -23,7 +23,7 @@ Function OOShutup10 {
 	./OOSU10.exe ooshutup10.cfg /quiet
 }
 
-Function InstallAdobe {
+Function InstallAdobePDF {
 	Write-Output "Installing Adobe Acrobat Reader"
 	choco install adobereader -y
 }
@@ -118,14 +118,94 @@ Function InstallVLC {
 	choco install vlc -y
 }
 
+Function InstallMPC {
+	Write-Output "Installing MPC-HC (fork by clsid2)"
+	choco install mpc-hc-clsid2 -y
+}
+
+Function InstallPotPlayer {
+	Write-Output "Installing PotPlayer"
+	choco install potplayer -y
+}
+
 Function InstallQBtorrent {
-	Write-Output "Installing qBitorrent"
-	choco install qbittorrent -y
+	Write-Output "Installing qBitorrent Enhanced Edition"
+	choco install qbittorrent-enhanced -y
+}
+
+Function InstallImageGlass {
+	Write-Output "Installing ImageGlass"
+	choco install imageglass -y
+}
+
+Function InstallXDM {
+	Write-Output "Installing Xtreme Download Manager"
+	choco install xdm -y
+}
+
+Function InstallThunderbird {
+	Write-Output "Installing Mozilla Thunderbird"
+	choco install thunderbird -y
 }
 
 Function InstallOffice2019 {
-	Write-Output "Installing Microsoft Office 2019 ProPlus 2019"
+	Write-Output "Installing Microsoft Office 2019 ProPlus"
 	choco install office2019proplus -y
+}
+
+Function Installvscode {
+	Write-Output "Installing Visual Studio Code"
+	choco install vscode -y
+}
+
+Function InstallAnaconda2 {
+	Write-Output "Installing Anaconda Distribution (Python 2.x)"
+	choco install anaconda2 -y
+}
+
+Function InstallAnaconda3 {
+	Write-Output "Installing Anaconda Distribution (Python 3.x)"
+	choco install anaconda3 -y
+}
+
+Function InstallHandbrake {
+	Write-Output "Installing Handbrake"
+	choco install handbrake.install -y
+}
+
+Function InstallTeamviewer {
+	Write-Output "Installing Teamviewer"
+	choco install teamviewer -y
+}
+
+Function InstallTeraCopy {
+	Write-Output "Installing TeraCopy"
+	choco install teracopy -y
+}
+
+Function InstallSteam {
+	Write-Output "Installing Steam"
+	choco install steam -y
+}
+
+Function InstallTypora {
+	Write-Output "Installing Typora"
+	choco install typora -y
+}
+
+Function InstallGit {
+	Write-Output "Installing Git"
+	choco install git -y
+}
+
+Function InstallLAVfilters {
+	Write-Output "Installing LAV Filters"
+	choco install lavfilters -y
+}
+
+Function InstallKliteCodec {
+	Write-Output "Installing K-Lite Codec Pack Mega"
+	choco install k-litecodecpackmega -y
 }
 
 ##########

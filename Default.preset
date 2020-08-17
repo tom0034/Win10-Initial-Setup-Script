@@ -11,7 +11,7 @@ RequireAdmin
 ### My Tweaks
 InstallChocolatey
 OOShutup10
-#InstallAdobe
+InstallAdobePDF
 InstallJava
 Install7Zip
 #InstallWinRAR
@@ -28,10 +28,26 @@ InstallVC2012
 InstallVC2013
 InstallVC2015
 InstallVC2017
-InstallIrfanView
-InstallVLC
+#InstallIrfanView
+InstallImageGlass
+#InstallVLC
+#InstallPotPlayer
+InstallMPC
+InstallXDM
+#InstallThunderbird
 #InstallQBtorrent
 #InstallOffice2019
+#Installvscode
+#InstallAnaconda2
+#InstallAnaconda3
+#InstallHandbrake
+#InstallTeamviewer
+#InstallTeraCopy
+#InstallSteam
+#InstallTypora
+#InstallGit
+#InstallLAVfilters
+InstallKliteCodec
 
 ### Remove Windows Apps
 DebloatAll
