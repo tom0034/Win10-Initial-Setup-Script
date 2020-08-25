@@ -158,6 +158,11 @@ Function Installvscode {
 	choco install vscode -y
 }
 
+Function Installvscodium {
+	Write-Output "Installing Visual Studio Code (without Microsoft telementary)"
+	choco install vscodium.install -y
+}
+
 Function InstallAnaconda2 {
 	Write-Output "Installing Anaconda Distribution (Python 2.x)"
 	choco install anaconda2 -y
@@ -206,6 +211,21 @@ Function InstallLAVfilters {
 Function InstallKliteCodec {
 	Write-Output "Installing K-Lite Codec Pack Mega"
 	choco install k-litecodecpackmega -y
+}
+
+Function InstallKeeWeb {
+	Write-Output "Installing KeeWeb"
+	choco install keeweb -y
+}
+
+Function InstallNextcloud {
+	Write-Output "Installing Nextcloud"
+	choco install nextcloud-client -y
+}
+
+Function InstallRaidrive {
+	Write-Output "Installing Raidrive"
+	choco install raidrive -y
 }
 
 ##########

@@ -38,6 +38,7 @@ InstallXDM
 #InstallQBtorrent
 #InstallOffice2019
 #Installvscode
+#Installvscodium
 #InstallAnaconda2
 #InstallAnaconda3
 #InstallHandbrake
@@ -48,6 +49,9 @@ InstallXDM
 #InstallGit
 #InstallLAVfilters
 InstallKliteCodec
+#InstallKeeWeb
+#InstallNextcloud
+#InstallRaidrive
 
 ### Remove Windows Apps
 DebloatAll
@@ -177,7 +181,7 @@ ShowFileOperationsDetails       # HideFileOperationsDetails
 EnableFileDeleteConfirm       # DisableFileDeleteConfirm
 HideTaskbarSearch               # ShowTaskbarSearchIcon         # ShowTaskbarSearchBox
 HideTaskView                    # ShowTaskView
-ShowSmallTaskbarIcons           # ShowLargeTaskbarIcons
+ShowLargeTaskbarIcons           # ShowSmallTaskbarIcons
 SetTaskbarCombineWhenFull       # SetTaskbarCombineNever        # SetTaskbarCombineAlways
 HideTaskbarPeopleIcon           # ShowTaskbarPeopleIcon
 ShowTrayIcons                   # HideTrayIcons
